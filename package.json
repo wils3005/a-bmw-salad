@@ -1,0 +1,38 @@
+{
+  "name": "a-bmw-salad",
+  "private": true,
+  "scripts": {
+    "prebuild": "rm -rf build/",
+    "build": "esbuild --bundle --minify --outdir=build/ --platform=node src/a-bmw-salad.ts",
+    "predeploy": "npm run build",
+    "deploy": "npm run sls -- deploy --verbose",
+    "lint": "eslint --fix --format=compact .",
+    "format": "prettier --write .",
+    "sls": "node -r dotenv/config node_modules/.bin/sls",
+    "start": "pm2 start",
+    "test": "exit 1",
+    "update": "npm-check --update"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.49.0",
+    "zod": "^3.11.6"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.16",
+    "@typescript-eslint/eslint-plugin": "^5.11.0",
+    "@typescript-eslint/parser": "^5.11.0",
+    "dotenv": "^16.0.0",
+    "esbuild": "^0.14.20",
+    "eslint": "^8.8.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-prettier": "^4.0.0",
+    "npm-check": "^5.9.2",
+    "pm2": "^5.1.2",
+    "prettier": "^2.5.1",
+    "serverless": "^3.1.1",
+    "serverless-dotenv-plugin": "^3.12.2",
+    "serverless-offline": "^8.4.0",
+    "typescript": "^4.5.5"
+  }
+}

@@ -1,0 +1,10 @@
+.serverless/
+node_modules/
+tmp/
+
+.DS_Store
+.env*
+!.env.sample
+*.code-workspace
+*.tsbuildinfo
+a-bmw-salad.js

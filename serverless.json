@@ -1,0 +1,19 @@
+{
+  "frameworkVersion": "2 || 3",
+  "functions": {
+    "default": {
+      "events": [{ "httpApi": { "method": "POST", "path": "/" } }],
+      "handler": "build/a-bmw-salad.handler"
+    }
+  },
+  "package": {
+    "patterns": ["!**", "build/**"]
+  },
+  "plugins": ["serverless-dotenv-plugin", "serverless-offline"],
+  "provider": {
+    "architecture": "arm64",
+    "name": "aws",
+    "runtime": "nodejs14.x"
+  },
+  "service": "a-bmw-salad"
+}
